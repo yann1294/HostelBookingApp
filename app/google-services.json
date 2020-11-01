@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "484151677537",
+    "firebase_url": "https://hostelbookingapp-ac3c9.firebaseio.com",
+    "project_id": "hostelbookingapp-ac3c9",
+    "storage_bucket": "hostelbookingapp-ac3c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484151677537:android:c23025dd2c650ff8555020",
+        "android_client_info": {
+          "package_name": "com.christelle.hostel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484151677537-9uqa24cuahiuuut3rvsqvflf9noho1u1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB28IYjKKS7mmi5fLZ2CGAthv8Yxh1ql4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484151677537-9uqa24cuahiuuut3rvsqvflf9noho1u1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484151677537:android:76fd1b31f8d15fa4555020",
+        "android_client_info": {
+          "package_name": "com.christelle.hostelbookingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484151677537-iqc1gmtalsfcq577comu742q5ij6vf9o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.christelle.hostelbookingapp",
+            "certificate_hash": "b5dfeae8439f218152b31a164b338a5614bd58ba"
+          }
+        },
+        {
+          "client_id": "484151677537-9uqa24cuahiuuut3rvsqvflf9noho1u1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB28IYjKKS7mmi5fLZ2CGAthv8Yxh1ql4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484151677537-9uqa24cuahiuuut3rvsqvflf9noho1u1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
