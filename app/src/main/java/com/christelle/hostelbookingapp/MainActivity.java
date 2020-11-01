@@ -36,9 +36,10 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
-    Button resendCode;
+    Button resendCode, goToMainPAge;
     Button resetPwdLocal;
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
         resendCode = findViewById(R.id.resendCode);
         verifyMessage = findViewById(R.id.verifyMsg);
+        goToMainPAge = findViewById(R.id.GoToMainPage);
 
-        userId = fAuth.getCurrentUser().getUid();
+        userId = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
         final FirebaseUser user = fAuth.getCurrentUser();
 
         if (!user.isEmailVerified()){
@@ -75,6 +77,17 @@ public class MainActivity extends AppCompatActivity {
                             Log.d("TAG", "onFailure: Email not sent " + e.getMessage());
                         }
                     });
+                }
+            });
+
+            goToMainPAge.setVisibility(View.VISIBLE);
+
+            goToMainPAge.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, MainScreen.class);
+                    startActivity(intent);
+                    finish();
                 }
             });
         }
@@ -131,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
     /**
      * Handles interactions for the logout button
