@@ -1,11 +1,13 @@
 package com.christelle.hostelbookingapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,11 +26,13 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import java.util.Objects;
+
 import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView fullName,email,phone,verifyMessage;
+    TextView fullName, email, mPhone, verifyMessage;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        phone = findViewById(R.id.textView7);
+        mPhone = findViewById(R.id.textView7);
         fullName = findViewById(R.id.textView4);
         email = findViewById(R.id.textView5);
         resetPwdLocal = findViewById(R.id.rstpwd);
@@ -78,9 +82,10 @@ public class MainActivity extends AppCompatActivity {
 
         DocumentReference documentReference = fStore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                phone.setText(documentSnapshot.getString("phone"));
+                mPhone.setText(Objects.requireNonNull(documentSnapshot).getString("phone"));
                 fullName.setText(documentSnapshot.getString("fName"));
                 email.setText(documentSnapshot.getString("email"));
             }
