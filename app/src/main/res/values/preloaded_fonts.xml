@@ -3,5 +3,8 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/aclonica</item>
         <item>@font/asset</item>
+        <item>@font/roboto_bold</item>
+        <item>@font/rubik</item>
+        <item>@font/rubik_medium</item>
     </array>
 </resources>
